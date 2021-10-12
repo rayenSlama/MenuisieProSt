@@ -1,0 +1,79 @@
+<div class="container">
+<div class="main-content">
+  <app-navbar title="Gestion employés"></app-navbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Mise à Jour</h4>
+            
+                    </div>
+                    <div class="card-body">
+                      <div class="container">
+                        <div class="panel panel-default">
+                          <div class="panel-heading"> Edition de l'employé</div>
+                          <div class="panel-body" *ngIf="currentData">
+                            <form #f="ngForm" (ngSubmit)="onUpdateData(f.value)">
+                              <div class="form-group">
+                                <label class="control-label">Nom :</label>
+                                <input class="form-control" type="text" name="nom" ngModel [(ngModel)]="currentData.nom">
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Prénom :</label>
+                                <input class="form-control" type="text" name="prenom" ngModel [(ngModel)]="currentData.prenom">
+                              </div>
+
+
+                              <div class="form-group">
+                                <label class="control-label">Télephone :</label>
+                                <input class="form-control" type="text" name="tel" ngModel [(ngModel)]="currentData.tel">
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Email :</label>
+                                <input class="form-control" type="email" name="e_mail" ngModel [(ngModel)]="currentData.e_mail">
+                              </div>
+
+                              <div class="form-group">
+                                <label class="control-label">Heure début :</label>
+                                <input class="form-control" type="time" name="heure_debut" ngModel [(ngModel)]="currentData.heure_debut">
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Heure fin :</label>
+                                <input class="form-control" type="time" name="heure_fin" ngModel [(ngModel)]="currentData.heure_fin">
+                              </div>
+
+
+
+                              <div class="form-group">
+                                <label class="control-label">Salaire :</label>
+                                <input class="form-control" type="number" name="salaire_par_heure" ngModel [(ngModel)]="currentData.salaire_par_heure">
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Prime :</label>
+                                <input class="form-control" type="number" name="prime" ngModel [(ngModel)]="currentData.prime">
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Service :</label>
+                                <input class="form-control" type="text" name="service" ngModel [(ngModel)]="currentData.service">
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Poste :</label>
+                                <input class="form-control" type="text" name="poste" ngModel [(ngModel)]="currentData.poste">
+                              </div>
+                              
+                              <button class="btn btn-success" type="submit"> Mettre à jour</button>
+                            </form>
+                          </div>
+                        </div>
+                      
+                      </div>
+                        
+                    </div>
+                </div>
+            </div>
+  
+  </div>
+  </div>
+  </div>
+</div>

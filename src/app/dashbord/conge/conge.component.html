@@ -1,0 +1,70 @@
+<div class="container">
+  <app-navbar title="Gestion des congés"></app-navbar>
+  <div class="row page-title">
+    <h3 class="text-center">Congés</h3>
+  </div>
+  
+  <div class="row page-title">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="card notification-card">
+        <h4>les congés prévus</h4>
+        <div class="table-responsive">
+          <table class="table table-striped"  *ngIf="conges">
+              <thead class=" text-primary" full>
+               <!--   <th>ID</th>-->
+                  <th>Nom</th>
+                  <th>Prénom</th>
+                  <th>Début congé</th>
+                  <th>Fin congé</th>
+            </thead>
+              <tbody>
+                 <!-- <tr ngFor="let employe of employes">-->
+                   <tr *ngFor="let c of conges">
+                  <!--  <th>{{c.id_empl}}</th>-->
+                    <th>{{c.nom}}</th>
+                    <th>{{c.prenom}}</th>
+                    <th>{{c.debut_conge}}</th>
+                    <th>{{c.fin_conge}}</th>
+                    <th> <button style="margin-left: 10px"  class="btn btn-success" (click)="AnnulerConge(c.id)">
+                      <span class="glyphicon glyphicon-remove-sign"></span> Annuler</button></th>
+                    </tr>
+                    </tbody>
+                    </table>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="card notification-card">
+        <h4>Nouvel congé</h4>
+        
+      
+       <!-- <div class="panel-heading"><b> Nouveau Congé </b> </div>
+                <div class="panel-body">-->
+
+                  
+                  <form #f="ngForm"  (ngSubmit)="onSaveConge(f.value)">
+            
+                   <div class="form-group">
+                      <label class="control-label">Employé :</label>
+                      <input class="form-control" type="number" name="employe.id"  ngModel >
+                    </div>
+
+                      <div class="form-group">
+                        <label class="control-label">Date début du congé :</label>
+                        <input class="form-control" type="date" name="debut_conge" ngModel>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label">Date début du congé :</label>
+                        <input class="form-control" type="date" name="fin_conge" ngModel>
+                      </div>
+                      
+                   
+                  <button style="margin-left:185px;" class="btn btn-success" type="submit">Ajouter</button>
+                  </form>                    
+                  </div>
+           
+</div>
+</div>
+</div>
+
+

@@ -1,0 +1,84 @@
+<div class="container">
+    <app-navbar title="Gestion salaires"></app-navbar>
+    <div class="main-content">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+         <!--  <div class="form-group">
+                <label class="control-label">Mois :</label>
+                <input class="form-control" type="month" name="mois" ngModel>
+              </div>--> 
+
+              <label class="control-label">Mois :</label>
+              <form #f="ngForm"  (ngSubmit)="onChercherMois(f.value)">
+              
+                <input type="month"   name="keyword" ngModel>
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search" ></span>
+                    </button>
+            
+        </form>
+        </div>
+        <div class="col-md-3">
+        <label class="control-label">Employé :</label>
+        <form>  
+       <!--    <p  *ngFor="let p of pointages._embedded.pointages">-->
+              <input  type="number"  ngModel>
+              <button class="btn btn-primary" (click)="findEmpl(id)">
+               <span class="glyphicon glyphicon-search" ></span>
+                  </button>
+         
+      </form>
+
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-11">
+                  <div class="card">
+                      <div class="card-header card-header-danger">
+                        <div class="col-md-8">
+                          <h4 class="card-title ">Salaire</h4>
+                          <p class="card-category">Par mois</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class=" text-primary" full>
+                                <!--    <th>ID</th>-->
+                                    <th>Mois</th>
+                                    <th>Heures de base</th>
+                                    <th>Heures sup</th>
+                                    <th>Primes</th>
+                                    <th>Total</th>
+            
+                             
+                              </thead>
+                                <tbody>
+                                  
+                                  <tr *ngFor="let s of salaires._embedded.salaires">
+                                  <!--  <th>{{s.id}}</th>-->
+                                    <th>{{s.mois}}</th>
+                                 
+                                    
+                                    <th>{{s.heures_de_base}}</th>
+                                
+                                    <th>{{s.heures_sup}}</th>
+                                    <th>{{s.primes}}</th>
+                                    <th>{{s.total}}</th>
+                                    <th> <button style="margin-left: 10px"  class="btn btn-success" (click)="Afficher()">
+                                      Afficher</button> <i class="fa fa-info-circle" aria-hidden="true"></i></th>
+                                      <th> <button style="margin-left: 10px"  class="btn btn-success" (click)="Imprimer()">
+                                     Imprimer</button> <i class="fa fa-print" aria-hidden="true"></i></th>
+                                       
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+  </div>
+  </div>
+  </div>
+  </div>
